@@ -1,0 +1,82 @@
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background: url("/dist/images/bg-intro-desktop.png") center center/cover, #ff7a7a; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+#main-div {
+  max-width: 1200px;
+  margin: auto;
+  height: 100vh; }
+  #main-div .container {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+    height: 100%; }
+    #main-div .container #left {
+      color: #fff; }
+      #main-div .container #left h1 {
+        font-size: 300%;
+        line-height: 1.1;
+        margin-bottom: 6%; }
+      #main-div .container #left p {
+        line-height: 1.8; }
+    #main-div .container #right {
+      padding: 1rem; }
+      #main-div .container #right .right-banner {
+        background: #6055a5;
+        padding: 1rem 2rem;
+        text-align: center;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 1.3rem;
+        font-weight: 300;
+        box-shadow: 1px 8px 5px -1px rgba(156, 69, 69, 0.445); }
+        #main-div .container #right .right-banner > p > span {
+          font-weight: 500; }
+      #main-div .container #right form {
+        padding: 7%;
+        border-radius: 10px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 8px 5px -1px rgba(156, 69, 69, 0.445); }
+        #main-div .container #right form input,
+        #main-div .container #right form button {
+          padding: 1rem 2rem;
+          margin-bottom: 1rem;
+          border: none;
+          border-radius: 5px; }
+        #main-div .container #right form input {
+          border: 1px solid #d1d1d1d0;
+          font-weight: bold; }
+          #main-div .container #right form input:focus {
+            outline: none;
+            border: 1px solid #6055a5;
+            border-radius: 5px; }
+        #main-div .container #right form > button {
+          margin-bottom: 0;
+          background: #38cc8c;
+          color: #fff;
+          cursor: pointer;
+          box-shadow: inset 0px -5px 0px 0px #32b87e; }
+          #main-div .container #right form > button:hover {
+            opacity: 0.7; }
+          #main-div .container #right form > button:focus {
+            outline: none; }
+        #main-div .container #right form > p {
+          padding: 1rem;
+          text-align: center;
+          font-size: 0.7rem;
+          color: #acacac; }
+          #main-div .container #right form > p span {
+            color: #ff7a7a;
+            font-weight: bold; }

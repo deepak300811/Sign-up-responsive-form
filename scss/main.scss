@@ -1,0 +1,116 @@
+$max-width: 1200px;
+$mobile-width: 375px;
+$primary-red: hsl(0, 100%, 74%);
+$primary-green: hsl(154, 59%, 51%);
+$accent-blue: hsl(248, 32%, 49%);
+$neutral-dark-blue: hsl(249, 10%, 26%);
+$neutral-grayish-blue: hsl(246, 25%, 77%);
+$white: #fff;
+$font: "Poppins", sans-serif;
+
+body {
+  font-size: 16px;
+  font-family: $font;
+  background: url("/dist/images/bg-intro-desktop.png") center center/cover,
+    $primary-red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main-div {
+  max-width: $max-width;
+  margin: auto;
+  height: 100vh;
+
+  .container {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+    height: 100%;
+
+    #left {
+      color: $white;
+      h1 {
+        font-size: 300%;
+        line-height: 1.1;
+        margin-bottom: 6%;
+      }
+      p {
+        line-height: 1.8;
+      }
+    }
+
+    #right {
+      padding: 1rem;
+      .right-banner {
+        background: $accent-blue;
+        padding: 1rem 2rem;
+        text-align: center;
+        color: $white;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 1.3rem;
+        font-weight: 300;
+        box-shadow: 1px 8px 5px -1px rgba(156, 69, 69, 0.445);
+        & > p > span {
+          font-weight: 500;
+        }
+      }
+      form {
+        padding: 7%;
+        border-radius: 10px;
+        background: $white;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 8px 5px -1px rgba(156, 69, 69, 0.445);
+        input,
+        button {
+          padding: 1rem 2rem;
+          margin-bottom: 1rem;
+          border: none;
+          // font-size: 1rem;
+          border-radius: 5px;
+        }
+        input {
+          border: 1px solid #d1d1d1d0;
+          font-weight: bold;
+          &:focus {
+            outline: none;
+            border: 1px solid $accent-blue;
+            border-radius: 5px;
+          }
+        }
+        & > button {
+          margin-bottom: 0;
+          background: $primary-green;
+          color: $white;
+          cursor: pointer;
+          box-shadow: inset 0px -5px 0px 0px hsl(154, 57%, 46%);
+          &:hover {
+            opacity: 0.7;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+        & > p {
+          padding: 1rem;
+          text-align: center;
+          font-size: 0.7rem;
+          color: #acacac;
+          span {
+            color: $primary-red;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
