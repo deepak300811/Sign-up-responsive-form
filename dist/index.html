@@ -32,35 +32,87 @@
           <div class="right-banner">
             <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
           </div>
-          <form action="#" autocomplete="off">
-            <!-- <div class="input-field"> -->
-            <input type="text" name="name" id="name" placeholder="Name" />
-            <!-- </div> -->
-            <!-- <div class="input-field"> -->
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              placeholder="Last Name"
-            />
-            <!-- </div> -->
-            <!-- <div class="input-field"> -->
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email Address"
-            />
-            <!-- </div> -->
-            <!-- <div class="input-field"> -->
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-            />
-            <!-- </div> -->
-            <button type="submit">CLAIM YOUR FREE TRIAL</button>
+          <form
+            id="myForm"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            autocomplete="off"
+          >
+            <div class="input-field-grid">
+              <div
+                id="name-div"
+                class="input-field"
+                onclick="addClass('nameDiv');"
+              >
+                <input type="text" name="name" id="name" placeholder="Name" />
+                <img src="../dist/images/icon-error.svg" alt="" />
+              </div>
+              <div>
+                <p><i>First Name cannot be entry</i></p>
+              </div>
+            </div>
+            <div class="input-field-grid">
+              <div
+                id="lname-div"
+                class="input-field"
+                onclick="addClass('lnameDiv');"
+              >
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder="Last Name"
+                />
+                <img src="../dist/images/icon-error.svg" alt="" />
+              </div>
+              <div>
+                <p><i>Last Name cannot be entry</i></p>
+              </div>
+            </div>
+            <div class="input-field-grid">
+              <div
+                id="email-div"
+                class="input-field"
+                onclick="addClass('emailDiv');"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email Address"
+                />
+                <img src="../dist/images/icon-error.svg" alt="" />
+              </div>
+              <div>
+                <p><i>Looks like this is not an email</i></p>
+              </div>
+            </div>
+            <div class="input-field-grid">
+              <div
+                id="password-div"
+                class="input-field"
+                onclick="addClass('passwordDiv');"
+              >
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                />
+                <img src="../dist/images/icon-error.svg" alt="" />
+              </div>
+              <div>
+                <p><i>Password cannot be entry</i></p>
+              </div>
+            </div>
+            <button
+              id="btn-clear"
+              type="submit"
+              onclick="addClass('');checkError();"
+            >
+              CLAIM YOUR FREE TRIAL
+            </button>
             <p>
               By clicking the button, you are agreeing to our
               <span> Terms and Services</span>
@@ -69,5 +121,6 @@
         </div>
       </div>
     </main>
+    <script src="../dist/script/script.js"></script>
   </body>
 </html>

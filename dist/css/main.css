@@ -29,7 +29,7 @@ body {
       #main-div .container #left p {
         line-height: 1.8; }
     #main-div .container #right {
-      padding: 1rem; }
+      padding: 0.2rem; }
       #main-div .container #right .right-banner {
         background: #6055a5;
         padding: 1rem 2rem;
@@ -49,19 +49,53 @@ body {
         display: flex;
         flex-direction: column;
         box-shadow: 1px 8px 5px -1px rgba(156, 69, 69, 0.445); }
-        #main-div .container #right form input,
-        #main-div .container #right form button {
-          padding: 1rem 2rem;
-          margin-bottom: 1rem;
-          border: none;
-          border-radius: 5px; }
-        #main-div .container #right form input {
-          border: 1px solid #d1d1d1d0;
-          font-weight: bold; }
-          #main-div .container #right form input:focus {
+        #main-div .container #right form .input-field-grid {
+          margin-bottom: 1rem; }
+          #main-div .container #right form .input-field-grid > .input-field + div {
+            display: flex;
+            font-size: 0.8rem;
+            color: #ff7a7a;
+            margin-top: 0.4rem;
+            justify-content: flex-end;
+            display: none; }
+          #main-div .container #right form .input-field-grid > .input-field.error + div {
+            display: flex;
+            font-size: 0.8rem;
+            color: #ff7a7a;
+            margin-top: 0.4rem;
+            justify-content: flex-end; }
+        #main-div .container #right form .input-field {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          #main-div .container #right form .input-field > img {
+            visibility: hidden; }
+          #main-div .container #right form .input-field.active {
             outline: none;
             border: 1px solid #6055a5;
             border-radius: 5px; }
+          #main-div .container #right form .input-field.error {
+            border: 2px solid #ff7a7a; }
+          #main-div .container #right form .input-field.error > input::placeholder {
+            color: #fff; }
+          #main-div .container #right form .input-field.error > input[type="email"] {
+            color: #ff7a7a; }
+          #main-div .container #right form .input-field.error > img {
+            visibility: visible; }
+        #main-div .container #right form .input-field,
+        #main-div .container #right form button {
+          padding: 1rem 2rem;
+          border: none;
+          border-radius: 5px; }
+        #main-div .container #right form .input-field > input {
+          border: none;
+          height: 100%;
+          font-weight: bold;
+          font-size: 0.9rem; }
+          #main-div .container #right form .input-field > input:focus {
+            outline: none; }
+        #main-div .container #right form .input-field {
+          border: 1px solid #d1d1d1d0; }
         #main-div .container #right form > button {
           margin-bottom: 0;
           background: #38cc8c;
@@ -80,3 +114,16 @@ body {
           #main-div .container #right form > p span {
             color: #ff7a7a;
             font-weight: bold; }
+
+@media only screen and (max-width: 768px) {
+  #main-div {
+    max-width: 500px; }
+    #main-div .container {
+      margin: 20% 3%;
+      grid-template-columns: repeat(1, 1fr); }
+      #main-div .container #left {
+        text-align: center; }
+        #main-div .container #left h1 {
+          font-size: 200%;
+          line-height: 1.1;
+          margin-bottom: 6%; } }

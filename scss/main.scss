@@ -48,7 +48,7 @@ body {
     }
 
     #right {
-      padding: 1rem;
+      padding: 0.2rem;
       .right-banner {
         background: $accent-blue;
         padding: 1rem 2rem;
@@ -70,22 +70,76 @@ body {
         display: flex;
         flex-direction: column;
         box-shadow: 1px 8px 5px -1px rgba(156, 69, 69, 0.445);
-        input,
-        button {
-          padding: 1rem 2rem;
+
+        .input-field-grid {
           margin-bottom: 1rem;
-          border: none;
-          // font-size: 1rem;
-          border-radius: 5px;
+          & > .input-field + div {
+            display: flex;
+            font-size: 0.8rem;
+            color: $primary-red;
+            margin-top: 0.4rem;
+            justify-content: flex-end;
+            // visibility: hidden;
+            display: none;
+          }
+          & > .input-field.error + div {
+            display: flex;
+            font-size: 0.8rem;
+            color: $primary-red;
+            margin-top: 0.4rem;
+            justify-content: flex-end;
+            // visibility: visible;
+          }
         }
-        input {
-          border: 1px solid #d1d1d1d0;
-          font-weight: bold;
-          &:focus {
+
+        .input-field {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          & > img {
+            visibility: hidden;
+          }
+          &.active {
             outline: none;
             border: 1px solid $accent-blue;
             border-radius: 5px;
           }
+          &.error {
+            //
+            border: 2px solid $primary-red;
+          }
+          &.error > input {
+            &::placeholder {
+              color: $white;
+            }
+            &[type="email"] {
+              color: $primary-red;
+            }
+          }
+
+          &.error > img {
+            visibility: visible;
+          }
+        }
+
+        .input-field,
+        button {
+          padding: 1rem 2rem;
+
+          border: none;
+          border-radius: 5px;
+        }
+        .input-field > input {
+          border: none;
+          height: 100%;
+          font-weight: bold;
+          font-size: 0.9rem;
+          &:focus {
+            outline: none;
+          }
+        }
+        .input-field {
+          border: 1px solid #d1d1d1d0;
         }
         & > button {
           margin-bottom: 0;
@@ -111,6 +165,32 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #main-div {
+    max-width: 500px;
+    .container {
+      // padding: 0rem 2rem;
+      margin: 20% 3%;
+      grid-template-columns: repeat(1, 1fr);
+      #left {
+        text-align: center;
+        h1 {
+          font-size: 200%;
+          line-height: 1.1;
+          margin-bottom: 6%;
+        }
+      }
+      // #right {
+      //   form {
+      //     .input-field-grid {
+      //       margin-bottom: 1rem;
+      //     }
+      //   }
+      // }
     }
   }
 }
